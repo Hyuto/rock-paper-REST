@@ -1,0 +1,6 @@
+dataset/
+tmp2/
+env
+__pycache__/
+*.py[cod]
+db.sqlite3
