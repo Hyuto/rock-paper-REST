@@ -9,12 +9,12 @@ def preprocess(image_dir):
     image = image.resize((128, 128)).convert('RGB')
     return np.array(image).tolist()
 
-def make_request(PORT, image):
+def make_request(url, image):
     headers = {"content-type": "application/json"}
     data = dumps({'image' : image})
     
     start = time()
-    req = requests.post(f'http://127.0.0.1:{PORT}/api/', data = data)
+    req = requests.post(url, data = data)
     duration = time() - start
     return req, duration
 

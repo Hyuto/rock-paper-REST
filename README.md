@@ -31,11 +31,21 @@ Test model store on `django` by making a request call
 2. test script<br>
    In different terminal run
    ```
-   python test/api-test.py PORT PATH-TO-IMG
+   python test/api-test.py URL PATH-TO-IMG
    ```
 
    or use the default image for testing
 
    ```
-   python test/api-test.py PORT
+   python test/api-test.py localhost:8000/api/
    ```
+
+## Heroku
+
+```json
+{
+   build  : "failed",
+   status : "crashed",
+   url    : "https://rock-paper-rest.herokuapp.com/api/"
+}
+```
