@@ -23,9 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'SECURITY-KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost'
+]
 
 
 # Application definition
@@ -39,9 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Other Lib
     'rest_framework',
-    'numpy',
-    'PIL',
-    'tflite_runtime',
     'API'
 ]
 

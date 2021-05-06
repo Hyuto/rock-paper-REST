@@ -1,0 +1,1 @@
+web: gunicorn rock-paper.wsgi

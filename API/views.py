@@ -18,7 +18,8 @@ class ModelView(APIView):
         if request.method == 'POST':
             data = json.loads(request.body)
             image = self.preprocess(data['image'])
-            response = {'predicted' : ApiConfig.model.predict(image)}
+            pred = ApiConfig.model.predict(image)
+            response = {'predicted' : pred[0], 'proba' : pred[1][0].tolist()}
             
             # returning JSON response
             return JsonResponse(response)

@@ -16,7 +16,7 @@ def make_request(PORT, image):
     start = time()
     req = requests.post(f'http://127.0.0.1:{PORT}/api/', data = data)
     duration = time() - start
-
+    return req, duration
 
 if __name__ == '__main__':
     args = sys.argv[1:]
@@ -26,8 +26,9 @@ if __name__ == '__main__':
         image_dir = args[1]
 
     image = preprocess(image_dir)
-    response, duration = make_request(args[0], image_dir)
+    response, duration = make_request(args[0], image)
 
-    print(response.status_code)
-    print(response.json())
+    print(f'Status : {response.status_code}')
+    for key, value in response.json().items():
+        print(f'{key} : {value}')
     print(f'time : {round(duration, 5)} s')

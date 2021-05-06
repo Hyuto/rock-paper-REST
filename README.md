@@ -1,6 +1,6 @@
 # Rock-Paper-Scissor detector in Django rest-framework
 
-Deploy rock-paper-scissor `tflite` model using `django-rest-framework`
+Develop rock-paper-scissor `tflite` model using `django-rest-framework` and deploy to `heroku`
 
 ## To - Do
 
@@ -24,12 +24,18 @@ python test/model-test.py
 
 Test model store on `django` by making a request call
 
-1. runserver
+1. runserver<br>
    ```
    python manage.py runserver
    ```
 2. test script<br>
    In different terminal run
    ```
-   python test/api-test.py
+   python test/api-test.py PORT PATH-TO-IMG
+   ```
+
+   or use the default image for testing
+
+   ```
+   python test/api-test.py PORT
    ```

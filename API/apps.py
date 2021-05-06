@@ -18,7 +18,7 @@ class TFModel:
         self.interpreter.invoke()
         proba = self.interpreter.get_tensor(self.output_details[0]['index'])
 
-        return self.label[argmax(proba)]
+        return self.label[argmax(proba)], proba
 
 class ApiConfig(AppConfig):
     name = 'API'
