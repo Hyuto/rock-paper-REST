@@ -27,8 +27,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '0.0.0.0',
-    'rock-paper-rest.herokuapp.com',
-    'localhost'
+    '127.0.0.1',
+    'localhost',
+    '.herokuapp.com'
 ]
 
 
