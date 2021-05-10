@@ -12,5 +12,6 @@ pytz==2021.1
 requests==2.25.1
 sqlparse==0.4.1
 urllib3==1.26.4
+whitenoise==5.2.0
 tflite-runtime==2.5.0
 --extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
