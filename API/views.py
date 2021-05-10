@@ -7,19 +7,15 @@ from rest_framework.response import Response
 from rest_framework import status
 
 import json
-import numpy as np
 from .apps import ApiConfig
 
 class ModelView(APIView):
-    def preprocess(self, image):
-        return np.array(image, dtype=np.float32) / 255.0
 
     def post(self, request):
         if request.method == 'POST':
             data = json.loads(request.body)
-            image = self.preprocess(data['image'])
-            pred = ApiConfig.model.predict(image)
-            response = {'predicted' : pred[0], 'proba' : pred[1][0].tolist()}
+            pred = ApiConfig.model.predict(data['image'])
+            response = {'predicted' : pred[0], 'proba' : pred[1][0]}
             
             # returning JSON response
             return JsonResponse(response)

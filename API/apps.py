@@ -1,5 +1,6 @@
 from django.apps import AppConfig
-from numpy import argmax
+import numpy as np
+from PIL import Image
 import tflite_runtime.interpreter as tflite
 
 class TFModel:
@@ -13,12 +14,21 @@ class TFModel:
         self.output_details = self.interpreter.get_output_details()
         self.input_shape = self.input_details[0]['shape']
 
+    def preprocess(self, image):
+        return np.asarray(image, dtype=np.float32) / 255.0
+
     def predict(self, img):
+        img = np.asarray(img)
+        if len(img) != 128:
+            img = img.reshape(128, 128, 4)
+            img = Image.fromarray(img, mode='RGBA').convert('RGB')
+        img = self.preprocess(img)
+
         self.interpreter.set_tensor(self.input_details[0]['index'], img.reshape(self.input_shape))
         self.interpreter.invoke()
         proba = self.interpreter.get_tensor(self.output_details[0]['index'])
 
-        return self.label[argmax(proba)], proba
+        return self.label[np.argmax(proba)], proba.tolist()
 
 class ApiConfig(AppConfig):
     name = 'API'

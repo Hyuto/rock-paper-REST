@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 from rest_framework.urlpatterns import format_suffix_patterns
+
+from frontend.views import app
 from API.views import ModelView
 
 urlpatterns = [
+    path('', app),
     path('admin/', admin.site.urls),
     path('api/', ModelView.as_view())
 ]
