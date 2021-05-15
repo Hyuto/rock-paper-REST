@@ -4,7 +4,7 @@ Develop rock-paper-scissor `tflite` model using `django-rest-framework` and depl
 
 ## To - Do
 
-1. Built frontend application
+1. Built frontend application using `react.js`
 
 ## Run on local
 
@@ -34,10 +34,15 @@ Develop rock-paper-scissor `tflite` model using `django-rest-framework` and depl
      ```
      pip install -r requirements.txt
      ```
-3. run django
-   ```
-   python manage.py runserver
-   ```
+3. prepare & run django server
+   * Collect static files
+     ```
+     python manage.py collectstatic
+     ```
+   * Run server
+     ```
+     python manage.py runserver
+     ```
 
 ### Test model
 
