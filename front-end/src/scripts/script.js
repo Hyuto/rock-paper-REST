@@ -1,23 +1,19 @@
 const start = (video) => {
     if (navigator.mediaDevices.getUserMedia) {
-        navigator
-            .mediaDevices
-            .getUserMedia({video: true})
-            .then((stream) => {
-                video.srcObject = stream;
-            })
-            .catch((e) => {
-                console.log(e);
-            });
+        navigator.mediaDevices.getUserMedia({
+            video: true
+        }).then((stream) => {
+            video.srcObject = stream;
+        }).catch((e) => {
+            console.log(e);
+        });
     }
 }
 
 const stop = (canvas, video, prediction) => {
-    if (video.srcObject !== null){
+    if (video.srcObject !== null) {
         let context = canvas.getContext('2d');
-        let tracks = video
-            .srcObject
-            .getTracks();
+        let tracks = video.srcObject.getTracks();
 
         for (let i = 0; i < tracks.length; i++) {
             tracks[i].stop();
@@ -37,13 +33,14 @@ const TakeAndPost = (canvas, video, prediction) => {
     );
 
     fetch(`${window.location.href}api/`, {
-        method: "POST",
-        body: JSON.stringify({'image': img})
-    })
-        .then(res => res.json())
-        .then(res => {
+            method: "POST",
+            body: JSON.stringify({
+                'image': img
+            })
+        }).then(res => res.json()).then(res => {
             prediction.innerHTML = `Prediction <strong>${res['predicted']}</strong>`
-        })
+        }
+    )
 }
 
 export {
