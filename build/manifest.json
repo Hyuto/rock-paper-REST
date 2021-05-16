@@ -1,0 +1,9 @@
+{
+  "short_name": "Rock-Paper-Scissor App",
+  "name": "Rock-Paper-Scissor App Using Django REST Framework",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
