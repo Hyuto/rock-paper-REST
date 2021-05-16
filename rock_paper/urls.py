@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.shortcuts import render
 
 from rest_framework.urlpatterns import format_suffix_patterns
 
-from frontend.views import app
 from API.views import ModelView
 
+def index(request):
+    return render(request, 'index.html')
+
 urlpatterns = [
-    path('', app),
+    path('', index),
     path('admin/', admin.site.urls),
     path('api/', ModelView.as_view())
 ]
