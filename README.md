@@ -4,7 +4,7 @@ Develop rock-paper-scissor `tflite` model using `django-rest-framework` and depl
 
 ## To - Do
 
-1. Built frontend application using `react.js`
+1. Improve UI
 
 ## Run on local
 
