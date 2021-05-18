@@ -1,7 +1,11 @@
 const start = (video) => {
     if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({
-            video: true
+            video: {
+                facingMode: { 
+                    ideal: "environment" 
+                }
+            }
         }).then((stream) => {
             video.srcObject = stream;
         }).catch((e) => {
