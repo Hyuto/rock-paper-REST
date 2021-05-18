@@ -2,10 +2,6 @@
 
 Develop rock-paper-scissor `tflite` model using `django-rest-framework` and deploy to `heroku`
 
-## To - Do
-
-1. Improve UI
-
 ## Run on local
 
 1. Clone this repository<br>

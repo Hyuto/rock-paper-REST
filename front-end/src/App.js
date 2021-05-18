@@ -17,13 +17,13 @@ const useStyles = theme => ({
     cards: {
         display: 'flex',
         'justify-content': 'center',
-        card: {
-            maxWidth: 200
-        }
     },
     buttons: {
         'text-align': 'center',
         margin: theme.spacing(0.5)
+    },
+    center: {
+        'text-align': 'center',
     }
 });
 
@@ -44,23 +44,24 @@ class App extends React.Component {
             <div className="App">
                 <CssBaseline />
                 <Container  maxWidth="sm" className={classes.root}>
+                    <Typography variant="h5" style={{margin: 5}}>Rock-Paper-Scissor Detector</Typography>
                     <Container className={classes.cards}>
-                        <Card className={classes.cards.card}>
+                        <Card style={{maxWidth: 128, margin: 5}}>
                             <CardActionArea>
                                 <video ref={this.inputRef['video']} autoPlay={true} width="128" height="128"></video>
-                                <CardContent>
-                                    <Typography gutterBottom variant="caption" component="h3">Webcam</Typography>
+                                <CardContent className={classes.center}>
+                                    <Typography gutterBottom variant="caption"><strong>Webcam</strong></Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                        <Card className={classes.cards.card}>
+                        <Card style={{maxWidth: 128, margin: 5}}>
                             <CardActionArea>
                                 <canvas ref={this.inputRef['canvas']}
                                     className="figure-img img-fluid rounded"
                                     width="128"
                                     height="128">
                                 </canvas>
-                                <CardContent>
+                                <CardContent className={classes.center}>
                                     <Typography gutterBottom variant="caption" component="p" ref={this.inputRef['prediction']}></Typography>
                                 </CardContent>
                             </CardActionArea>
