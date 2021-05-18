@@ -24,9 +24,9 @@ const stop = (canvas, video, prediction) => {
         }
 
         video.srcObject = null;
-        context.clearRect(0, 0, canvas.width, canvas.height)
-        prediction.innerHTML = ``
+        context.clearRect(0, 0, canvas.width, canvas.height);
     }
+    prediction.innerHTML = ``;
 }
 
 const TakeAndPost = (canvas, video, prediction) => {
@@ -35,6 +35,7 @@ const TakeAndPost = (canvas, video, prediction) => {
     const img = Array.from(
         context.getImageData(0, 0, canvas.width, canvas.height).data
     );
+    prediction.innerHTML = ``;
 
     fetch(`${window.location.href}api/`, {
             method: "POST",
@@ -51,4 +52,4 @@ export {
     start,
     stop,
     TakeAndPost
-}
+};

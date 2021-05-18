@@ -78,8 +78,9 @@ Test model store on `django` by making a request call
 
 ```json
 {
-   build  : "success",
-   status : "running",
-   url    : "https://rock-paper-rest.herokuapp.com/api/"
+   build     : "success",
+   status    : "running",
+   url       : "https://rock-paper-rest.herokuapp.com/",
+   end_point : "https://rock-paper-rest.herokuapp.com/api/"
 }
 ```

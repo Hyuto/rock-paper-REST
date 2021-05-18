@@ -34,7 +34,7 @@ class App extends React.Component {
             'canvas': React.createRef(null),
             'video': React.createRef(null),
             'prediction': React.createRef(null)
-        }
+        };
     }
 
     render() {
