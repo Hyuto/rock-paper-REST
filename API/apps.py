@@ -18,7 +18,7 @@ class TFModel:
         return np.asarray(image, dtype=np.float32) / 255.0
 
     def predict(self, img):
-        img = np.asarray(img)
+        img = np.asarray(img, dtype=np.uint8)
         if len(img) != 128:
             img = img.reshape(128, 128, 4)
             img = Image.fromarray(img, mode='RGBA').convert('RGB')

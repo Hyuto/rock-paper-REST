@@ -7,7 +7,7 @@ from PIL import Image
 def preprocess(image_dir):
     image = Image.open(image_dir)
     image = image.resize((128, 128)).convert('RGB')
-    return np.array(image).tolist()
+    return np.asarray(image).tolist()
 
 def make_request(url, image):
     headers = {"content-type": "application/json"}

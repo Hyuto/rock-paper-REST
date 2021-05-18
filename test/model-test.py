@@ -24,7 +24,7 @@ class Model:
 def preprocess(image_dir):
     image = Image.open(image_dir)
     image = image.resize((128, 128)).convert('RGB')
-    image = np.array(image, dtype=np.float32) / 255.0
+    image = np.asarray(image, dtype=np.float32) / 255.0
     return image
 
 if __name__ == '__main__':
