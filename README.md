@@ -1,5 +1,7 @@
 # Rock-Paper-Scissor detector in Django rest-framework
 
+![Demo](./rock-paper-scissor.png)
+
 Develop rock-paper-scissor `tflite` model using `django-rest-framework` and deploy to `heroku`
 
 ## Run on local
@@ -34,6 +36,10 @@ Develop rock-paper-scissor `tflite` model using `django-rest-framework` and depl
    * Collect static files
      ```
      python manage.py collectstatic
+     ```
+   * Migrate [Optional]
+     ```
+     python manage.py migrate
      ```
    * Run server
      ```
@@ -84,3 +90,15 @@ Test model store on `django` by making a request call
    end_point : "https://rock-paper-rest.herokuapp.com/api/"
 }
 ```
+
+## Frontend App
+
+Build using `React.js` with `Material UI`. Source code is on `front-end` folder. Change and use your custom `UI`.
+
+**Build Custom UI**
+
+```
+cd front-end && npm run allocate
+```
+
+then do `collectstatic` and run the app.
