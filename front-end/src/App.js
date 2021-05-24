@@ -1,9 +1,11 @@
 import React from "react";
 import {start, stop, TakeAndPost} from "./scripts/script";
 
-import { Button, CssBaseline, Container, Icon, Typography } from '@material-ui/core';
+import { Button, CssBaseline, Container, Typography } from '@material-ui/core';
 import { Card, CardActionArea, CardContent } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+
+import SendIcon from '@material-ui/icons/Send';
 
 const useStyles = theme => ({
     root: {
@@ -81,7 +83,7 @@ class App extends React.Component {
                                 Stop
                         </Button>
                         <Button variant="contained" color="primary" 
-                            endIcon={<Icon>send</Icon>} className={classes.buttons}
+                            endIcon={<SendIcon />} className={classes.buttons}
                             onClick={() => TakeAndPost(
                                 this.inputRef['canvas'].current,
                                 this.inputRef['video'].current,
