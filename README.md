@@ -13,38 +13,41 @@ Develop rock-paper-scissor `tflite` model using `django-rest-framework` and depl
    ```
 2. Create `virtualenv` & Install dependencies<br>
    * Create `virtualenv`
-     ```
-     python -m venv VENV-NAME
-     ```
+     | OS | Command |
+     | -- | ------- |
+     | Linux | `python -m venv VENV-NAME` |
+     | Windows | `py -m venv VENV-NAME` |
+     
    * Activate `virtualenv`<br>
-     **Windows**
+     | OS | Command |
+     | -- | ------- |
+     | Linux | `source ./VENV-NAME/bin/activate` |
+     | Windows | `./VENV-NAME/Scripts/activate` |
 
-     ```
-     ./VENV-NAME/Scripts/activate
-     ```
-
-     **Linux**
-
-     ```
-     source ./VENV-NAME/bin/activate
-     ```
    * Install dependencies
-     ```
-     pip install -r requirements.txt
-     ```
+     | OS | Command |
+     | -- | ------- |
+     | Linux | `python -m pip install -r requirements.txt` |
+     | Windows | `py -m pip install -r requirements.txt` |
+     
 3. prepare & run django server
    * Collect static files
-     ```
-     python manage.py collectstatic
-     ```
+     | OS | Command |
+     | -- | ------- |
+     | Linux | `python manage.py collectstatic` |
+     | Windows | `py manage.py collectstatic` |
+     
    * Migrate [Optional]
-     ```
-     python manage.py migrate
-     ```
+     | OS | Command |
+     | -- | ------- |
+     | Linux | `python manage.py migrate` |
+     | Windows | `py manage.py migrate` |
+     
    * Run server
-     ```
-     python manage.py runserver
-     ```
+     | OS | Command |
+     | -- | ------- |
+     | Linux | `python manage.py runserver` |
+     | Windows | `py manage.py runserver` |
 
 ### Test model
 
